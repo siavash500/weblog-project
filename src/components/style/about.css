@@ -1,0 +1,81 @@
+.about-container{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
+}
+
+
+
+.about-title {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.about-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #3498db;
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-section {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-section:hover {
+  transform: translateY(-5px);
+}
+
+.about-subtitle {
+  color: #2980b9;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border-right: 4px solid #3498db;
+  padding-right: 15px;
+}
+
+.about-text {
+  color: #34495e;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+/* طراحی واکنش‌گرا */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 20px 15px;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .about-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .about-text {
+    font-size: 1rem;
+  }
+}
