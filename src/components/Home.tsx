@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { blogs } from "../data/blogdata.ts";
-
+import { Link } from "react-router-dom";
 import Mount1 from "./style/mounten.jpeg";
 import Mount2 from "./style/mounten2.jpeg";
 import Mount3 from "./style/mounten3.jpeg";
@@ -13,7 +13,7 @@ export default function Home() {
   const images = [Mount1, bluesky];
   const bgColors = [
     "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)", // حالت عادی
-"linear-gradient(135deg, #d0e2f0 0%, #a8cfe5 100%)" // شفق قطبی ملایم و شیک
+    "linear-gradient(135deg, #d0e2f0 0%, #a8cfe5 100%)" // شفق قطبی ملایم و شیک
   ];
 
   const [current, setCurrent] = useState(0);
@@ -23,14 +23,14 @@ export default function Home() {
   const isAurora = current === 1;
 
   useEffect(() => {
-  intervalRef.current = window.setInterval(() => {
-    setCurrent((prev) => (prev + 1) % images.length);
-  }, 5000); // 5000 میلی‌ثانیه = 5 ثانیه
+    intervalRef.current = window.setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 5000); // 5000 میلی‌ثانیه = 5 ثانیه
 
-  return () => {
-    if (intervalRef.current !== null) clearInterval(intervalRef.current);
-  };
-}, []);
+    return () => {
+      if (intervalRef.current !== null) clearInterval(intervalRef.current);
+    };
+  }, []);
 
 
   return (
@@ -45,13 +45,13 @@ export default function Home() {
         <div className="home-text">
           <h1
             className="home-title"
-           
+
           >
             به وبلاگ کوهنوردی من خوش آمدید
           </h1>
           <p
             className="home-description"
-           
+
           >
             اینجا مکانی برای به اشتراک گذاری تجربیات و عکس‌های کوهنوردی من است.
             از دیدن منظره‌های breathtaking لذت ببرید.
@@ -73,21 +73,23 @@ export default function Home() {
       <div className="blog-section">
         <h2 className="blog-section-title" >آخرین مطالب وبلاگ</h2>
 
-       
-           <div className="blog-grid">
-              {blogs.map(blog => (
-                <div key={blog.id} className="blog-card">
-                  <div className="blog-image-container">
-                    <img src={blog.image} alt={blog.title} className="blog-image" />
-                    <div className="blog-date">{blog.date}</div>
-                  </div>
-                  <div className="blog-content">
-                    <h3 className="blog-title">{blog.title}</h3>
-                    <p className="blog-excerpt">{blog.excerpt}</p>
-                    <button className="blog-read-more">ادامه مطلب</button>
-                  </div>
-                </div>
-              ))}
+
+        <div className="blog-grid">
+          {blogs.map(blog => (
+            <div key={blog.id} className="blog-card">
+              <div className="blog-image-container">
+                <img src={blog.image} alt={blog.title} className="blog-image" />
+                <div className="blog-date">{blog.date}</div>
+              </div>
+              <div className="blog-content">
+                <h3 className="blog-title">{blog.title}</h3>
+                <p className="blog-excerpt">{blog.excerpt}</p>
+                <Link to={`/blogs/${blog.id}`} >
+                  <button className="blog-read-more">ادامه مطلب</button>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* /////// */}
