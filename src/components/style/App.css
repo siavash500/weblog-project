@@ -10,7 +10,7 @@
 } */
 .navbar{
     width: 100%;
-    height: 60;
+    height: 80px;
     position: fixed;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;

@@ -1,3 +1,4 @@
+/* ================== Home Container ================== */
 .home-container {
   flex: 1;
   display: flex;
@@ -5,272 +6,92 @@
   padding: 40px 20px;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: calc(100vh - 80px);
+  margin-top: 50px;
 }
 
+/* ================== Home Content ================== */
 .home-content {
   display: flex;
+  flex-direction: column; /* پیش‌فرض: عمودی */
   align-items: center;
-  max-width: 100%;
-  gap: 40px;
-  margin-bottom: 60px;
-    margin-top: 50px;
-
-}
-
-.home-text {
-  flex: 1;
-  max-width: 500px;
-}
-
-.home-title {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 20px;
-  text-align: right;
-}
-
-.home-description {
-  font-size: 1.2rem;
-  color: #34495e;
-  text-align: right;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.home-image-container {
-  flex: 1;
-  display: flex;
-  /* justify-content: flex-end; */
-  max-width: 70%; /* افزایش عرض کانتینر */
-}
-
-.home-image {
-  width: 70%; 
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-height: 500px;
-  object-fit: cover;
-  margin-left: 100px;
-}
-
-/* بخش وبلاگ */
-.blog-section {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.blog-section-title {
-  font-size: 2rem;
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 40px;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-.blog-section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(to right, #3498db, #2c3e50);
-  border-radius: 2px;
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 30px;
-  margin-bottom: 50px;
-}
-
-.blog-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.blog-image-container {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-}
-
-.blog-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
+  max-width: 1280px; /* حداکثر عرض */
+  margin: 0 auto 60px auto;
+  padding-top: 50px;
 }
 
-.blog-card:hover .blog-image {
-  transform: scale(1.05);
-}
-
-.blog-date {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background: rgba(44, 62, 80, 0.85);
-  color: white;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-}
-
-.blog-content {
-  padding: 25px;
-}
-
-.blog-title {
-  font-size: 1.4rem;
-  color: #2c3e50;
-  margin-bottom: 15px;
-  text-align: right;
-}
-
-.blog-excerpt {
-  color: #7f8c8d;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  text-align: right;
-}
-
-.blog-read-more {
-  background: transparent;
-  color: #3498db;
-  border: 2px solid #3498db;
-  padding: 8px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s;
-  display: block;
-  margin-right: auto;
-}
-
-.blog-read-more:hover {
-  background: #3498db;
-  color: white;
-}
-
-.blog-actions {
-  text-align: center;
-}
-
-.view-all-blogs {
-  background: linear-gradient(to right, #3498db, #2c3e50);
-  color: white;
-  border: none;
-  padding: 12px 35px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.view-all-blogs:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* طراحی واکنش‌گرا */
-@media (max-width: 768px) {
+/* حالت دسکتاپ: بالای 1280px کنار هم */
+@media (min-width: 1280px) {
   .home-content {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  
-  .home-title, .home-description {
-    text-align: center;
-  }
-  
-  .home-image-container {
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-  
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .blog-section-title {
-    font-size: 1.8rem;
+    flex-direction: row; 
+    align-items: flex-start;
+    gap: 40px;
   }
 }
 
-.home-container {
-  flex: 1;
+/* ================== Home Image ================== */
+.home-image-container {
+  width: 100%;
+  max-width: 700px; /* حداکثر عرض تصویر */
+  height: 600px; /* ارتفاع ثابت */
+  margin: 0 auto; /* وسط چین صفحه */
+  padding: 0 20px; /* فاصله از چپ و راست */
   display: flex;
-  flex-direction: column;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  min-height: calc(100vh - 80px);
-}
-
-.home-content {
-  display: flex;
+  justify-content: center;
   align-items: center;
-  max-width: 100%;
-  gap: 40px;
-  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
+.home-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 0;
+  border-radius: 12px;
+}
+
+.home-image.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* ================== Home Text ================== */
 .home-text {
-  flex: 1;
-  max-width: 500px;
+  max-width: 700px;
+  text-align: center;
+}
+
+@media (min-width: 1280px) {
+  .home-text {
+    text-align: right;
+  }
 }
 
 .home-title {
   font-size: 2.5rem;
   color: #2c3e50;
-  margin-bottom: 20px;
-  text-align: right;
+  margin-bottom: 15px;
 }
 
 .home-description {
   font-size: 1.2rem;
   color: #34495e;
-  text-align: right;
   line-height: 1.6;
-  margin-bottom: 30px;
 }
 
-.home-image-container {
-  flex: 1;
-  display: flex;
-  max-width: 70%;
-}
-
-.home-image {
-  width: 1000px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-height: 600px;
-  margin-right: -20%;
-  object-fit: cover;
-  margin-left: 100px;
-}
-
-/* بخش وبلاگ */
+/* ================== Blog Section ================== */
 .blog-section {
   max-width: 1200px;
+  margin: 0 auto 50px auto;
   width: 100%;
-  margin: 0 auto;
 }
 
 .blog-section-title {
@@ -298,20 +119,20 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 30px;
-  margin-bottom: 50px;
 }
 
+/* ================== Blog Card ================== */
 .blog-card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .blog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 .blog-image-container {
@@ -335,7 +156,7 @@
   position: absolute;
   top: 15px;
   left: 15px;
-  background: rgba(44, 62, 80, 0.85);
+  background: rgba(44,62,80,0.85);
   color: white;
   padding: 5px 12px;
   border-radius: 20px;
@@ -344,20 +165,19 @@
 
 .blog-content {
   padding: 25px;
+  text-align: right;
 }
 
 .blog-title {
   font-size: 1.4rem;
   color: #2c3e50;
   margin-bottom: 15px;
-  text-align: right;
 }
 
 .blog-excerpt {
   color: #7f8c8d;
   line-height: 1.6;
   margin-bottom: 20px;
-  text-align: right;
 }
 
 .blog-read-more {
@@ -369,8 +189,6 @@
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s;
-  display: block;
-  margin-right: auto;
 }
 
 .blog-read-more:hover {
@@ -380,6 +198,7 @@
 
 .blog-actions {
   text-align: center;
+  margin-top:50px;
 }
 
 .view-all-blogs {
@@ -396,106 +215,45 @@
 
 .view-all-blogs:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-
-/* /////////////////////// */
-/* طراحی واکنش‌گرا - بهبود یافته */
-@media (max-width: 1610px) {
-   .home-image {
-     width: 90%; /* تصویر باید عرض کامل داشته باشد */
-     max-height: 500px; /* حداکثر ارتفاع تصویر */
-     margin-left: 50px; /* فاصله از سمت چپ */
-   }
+/* ================== Responsive ================== */
+@media (max-width: 1280px) {
+  .home-content {
+    flex-direction: column-reverse; /* تصویر بالا، متن پایین */
+    align-items: center;
+  }
 }
 
-@media (max-width: 992px) {
-   .home-content {
-     flex-direction: column; /* محتوای متنی و تصویر در موبایل به صورت عمودی نمایش داده شوند */
-     text-align: center; /* متن باید در وسط صفحه قرار گیرد */
-     gap: 30px; /* فاصله بین محتوا */
-   }
-   .home-text {
-     max-width: 100%; /* متن حداکثر عرض 100% */
-   }
-   .home-title, .home-description {
-     text-align: center; /* تراز کردن عنوان و توضیحات در وسط */
-   }
-   .home-image-container {
-     justify-content: center; /* مرکز کردن تصویر */
-     max-width: 100%;
-     margin-bottom: 20px;
-   }
-   .home-image {
-     width: 100%; /* عرض 100% برای تصویر */
-     max-width: 600px; /* حداکثر عرض تصویر */
-     margin-right: 0;
-     margin-left: 0;
-   }
+@media (max-width: 993px) {
+  .home-image-container {
+    height: 400px;
+    padding: 0 15px;
+  }
 }
 
 @media (max-width: 768px) {
-   .home-container {
-     padding: 30px 15px; /* کاهش پدینگ برای صفحات کوچک‌تر */
-   }
-   .home-title {
-     font-size: 2rem; /* کاهش سایز فونت عنوان */
-   }
-   .home-description {
-     font-size: 1.1rem; /* کاهش سایز فونت توضیحات */
-   }
-   .home-image {
-     max-height: 400px; /* محدود کردن ارتفاع تصویر */
-   }
-   .blog-grid {
-     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* تغییر اندازه ستون‌های گرید */
-     gap: 20px;
-   }
-   .blog-section-title {
-     font-size: 1.8rem; /* کاهش سایز عنوان بخش وبلاگ */
-   }
-   .blog-content {
-     padding: 20px; /* کاهش پدینگ در بخش وبلاگ */
-   }
-   .blog-title {
-     font-size: 1.3rem; /* کاهش سایز عنوان مقالات */
-   }
+  .home-image-container {
+    height: 300px;
+  }
+  .home-title {
+    font-size: 2rem;
+  }
+  .home-description {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 576px) {
-   .home-title {
-     font-size: 1.8rem; /* کاهش سایز عنوان */
-   }
-   .home-description {
-     font-size: 1rem; /* کاهش سایز توضیحات */
-   }
-   .blog-grid {
-     grid-template-columns: 1fr; /* گرید تک ستونه برای صفحات خیلی کوچک */
-   }
-   .blog-image-container {
-     height: 200px; /* کاهش ارتفاع تصویر در وبلاگ */
-   }
-   .view-all-blogs {
-     padding: 10px 25px; /* کاهش پدینگ دکمه "مشاهده همه بلاگ‌ها" */
-     font-size: 1rem; /* کاهش سایز فونت دکمه */
-   }
-}
-
-@media (max-width: 400px) {
-   .home-container {
-     padding: 20px 10px; /* کاهش پدینگ */
-   }
-   .home-title {
-     font-size: 1.6rem; /* کاهش سایز عنوان */
-   }
-   .blog-section-title {
-     font-size: 1.6rem; /* کاهش سایز عنوان بخش وبلاگ */
-   }
-   .blog-content {
-     padding: 15px; /* کاهش پدینگ در محتوای بلاگ */
-   }
-   .blog-title {
-     font-size: 1.2rem; /* کاهش سایز عنوان مقالات */
-   }
+  .home-image-container {
+    height: 250px;
+    padding: 0 5px;
+  }
+  .home-title {
+    font-size: 1.6rem;
+  }
+  .home-description {
+    font-size: 1rem;
+  }
 }
