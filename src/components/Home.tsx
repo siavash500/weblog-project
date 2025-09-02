@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { blogs } from "../data/blogdata.ts";
+
 import Mount1 from "./style/mounten.jpeg";
 import Mount2 from "./style/mounten2.jpeg";
 import Mount3 from "./style/mounten3.jpeg";
@@ -71,52 +73,24 @@ export default function Home() {
       <div className="blog-section">
         <h2 className="blog-section-title" >آخرین مطالب وبلاگ</h2>
 
-        <div className="blog-grid">
-          <div className="blog-card">
-            <div className="blog-image-container">
-              <img src={Mount2} alt="صعود به دماوند" className="blog-image" />
-              <div className="blog-date">۲۵ مرداد ۱۴۰۲</div>
-            </div>
-            <div className="blog-content">
-              <h3 className="blog-title">صعود به قله دماوند</h3>
-              <p className="blog-excerpt">
-                تجربه بی‌نظیر صعود به بام ایران در فصل تابستان. هوای خنک و
-                منظره‌های فوق‌العاده...
-              </p>
-              <button className="blog-read-more">ادامه مطلب</button>
-            </div>
-          </div>
-
-          <div className="blog-card">
-            <div className="blog-image-container">
-              <img src={Mount3} alt="کوهستان آلپ" className="blog-image" />
-              <div className="blog-date">۱۲ تیر ۱۴۰۲</div>
-            </div>
-            <div className="blog-content">
-              <h3 className="blog-title">سفر به کوهستان آلپ</h3>
-              <p className="blog-excerpt">
-                گزارش سفر به آلپ سوئیس و تجربه کوهنوردی در یکی از زیباترین
-                رشته کوه‌های جهان...
-              </p>
-              <button className="blog-read-more">ادامه مطلب</button>
-            </div>
-          </div>
-
-          <div className="blog-card">
-            <div className="blog-image-container">
-              <img src={Mount4} alt="دره سبز" className="blog-image" />
-              <div className="blog-date">۳ خرداد ۱۴۰۲</div>
-            </div>
-            <div className="blog-content">
-              <h3 className="blog-title">پیاده‌روی در دره سبز</h3>
-              <p className="blog-excerpt">
-                گشت‌وگذار در دره‌ای سرسبز و پوشیده از جنگل‌های انبوه و
-                رودخانه‌های خروشان...
-              </p>
-              <button className="blog-read-more">ادامه مطلب</button>
-            </div>
-          </div>
+       
+           <div className="blog-grid">
+              {blogs.map(blog => (
+                <div key={blog.id} className="blog-card">
+                  <div className="blog-image-container">
+                    <img src={blog.image} alt={blog.title} className="blog-image" />
+                    <div className="blog-date">{blog.date}</div>
+                  </div>
+                  <div className="blog-content">
+                    <h3 className="blog-title">{blog.title}</h3>
+                    <p className="blog-excerpt">{blog.excerpt}</p>
+                    <button className="blog-read-more">ادامه مطلب</button>
+                  </div>
+                </div>
+              ))}
         </div>
+
+        {/* /////// */}
 
         <div className="blog-actions">
           <button className="view-all-blogs">مشاهده همه مطالب</button>

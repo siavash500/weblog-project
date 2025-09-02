@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home.tsx";
 import About from "./components/About.tsx";
 import Navbar from "./components/Navbar.tsx";
+import BlogList from "./data/BlogList.tsx"; 
+import BlogDetailsWrapper from "./data/BlogDetailsWrapper.tsx";
 import "./components/style/App.css";
 
 export default function App() {
@@ -13,6 +15,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/blogs" element={<BlogList />} /> {/* مسیر لیست بلاگ */}
+            <Route path="/blogs/:id" element={<BlogDetailsWrapper />} /> {/* مسیر جزئیات بلاگ */}
           </Routes>
         </div>
       </div>
