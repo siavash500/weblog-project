@@ -15,6 +15,9 @@
 .right {
     display: flex;
     align-items: center;
+    /* justify-content: space-between; */
+    gap: 30px;
+    width: 30%  ;
 }
 
 .right h1 {
@@ -34,6 +37,7 @@
     display: flex;
     align-items: center;
     gap: 25px;
+    
 }
 
 .links-con a {
@@ -44,6 +48,7 @@
     border-radius: 4px;
     transition: all 0.3s ease;
     font-weight: 800;
+    
 }
 
 .links-con a:hover,
@@ -57,4 +62,39 @@
 a{
     color: white;
     text-decoration: none;
+}
+
+
+
+
+
+.Link-login {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    
+}
+
+.Link-login {
+    color: rgba(255, 255, 255, 0.842);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 800;
+    
+}
+
+.Link-login:hover,
+.Link-login:focus {
+    font-weight: bold;
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+}
+
+
+.right-register{
+    display: flex;
+gap: 5px;
 }

@@ -5,7 +5,9 @@ import Navbar from "./components/Navbar.tsx";
 import BlogList from "./data/BlogList.tsx"; 
 import BlogDetailsWrapper from "./data/BlogDetailsWrapper.tsx";
 import "./components/style/App.css";
-
+import Login from "./components/Form/Login.tsx"
+import Signup from "./components/Form/Signup.tsx"
+// App.tsx
 export default function App() {
   return (
     <BrowserRouter>
@@ -15,9 +17,13 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/blogs" element={<BlogList />} /> {/* مسیر لیست بلاگ */}
-            <Route path="/blogs/:id" element={<BlogDetailsWrapper />} /> {/* مسیر جزئیات بلاگ */}
+            <Route path="/blogs" element={<BlogList />} />
+            <Route path="/blogs/:id" element={<BlogDetailsWrapper />} />
+            <Route path="/login" element={<Login/>} />  
+
+            <Route path="register" element={<Signup/>}/>
           </Routes>
+          
         </div>
       </div>
     </BrowserRouter>
