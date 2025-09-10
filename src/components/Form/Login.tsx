@@ -2,7 +2,7 @@ import styles from "./Login.module.css";
 
 export default function Login() {
   return (
-    <div className={styles.loginWrapper}>
+    <div style={{paddingTop:"180px"}} className={styles.loginWrapper}>
       <div className={styles.loginContainer}>
         <h1>صفحه ورود</h1>
         <form className={styles.loginForm}>
@@ -11,7 +11,7 @@ export default function Login() {
             <input type="email" />
           </div>
           <div className="form-group">
-            <label>رمز عبور:</label>
+            <label>رمز عبور</label>
             <input type="password" />
           </div>
           <button type="submit">ورود</button>

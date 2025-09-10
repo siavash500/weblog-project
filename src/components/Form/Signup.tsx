@@ -2,10 +2,11 @@ import styles from "./Signup.module.css";
 
 export default function Signup() {
   return (
-    <div className={styles.pageWrapper}>
+    <div style={{paddingTop:"180px"}} className={styles.pageWrapper}>
       <div className={styles.signupContainer}>
+        <h1>ثبت نام</h1>
         <form className={styles.signupForm} action="" method="post">
-          <h1>ثبت نام</h1>
+          
   <div>
     <label htmlFor="name">نام</label>
     <input type="text" name="name" />
